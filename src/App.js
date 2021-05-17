@@ -5,7 +5,7 @@ import { actionTypes } from "./reducer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/core";
 import theme from "./theme";
-import { Login } from "./components";
+import { Login, Navbar, Landing, Education } from "./components";
 import "./App.css";
 
 function App() {
@@ -36,10 +36,16 @@ function App() {
       <Router>
         {!user ? (
           <Switch>
+            <Route exact path='/' component={Landing} />
             <Route exact path='/login' component={Login} />
           </Switch>
         ) : (
-          <h1>Ingelogd</h1>
+          <>
+            <Navbar />
+            <Switch>
+              <Route exact path='/education' component={Education} />
+            </Switch>
+          </>
         )}
       </Router>
     </ThemeProvider>

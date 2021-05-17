@@ -1,0 +1,12 @@
+.landing {
+  min-height: 100vh;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+}
+
+.landing__right,
+.landing__left {
+  flex: 0.45;
+  margin: 30px auto;
+}

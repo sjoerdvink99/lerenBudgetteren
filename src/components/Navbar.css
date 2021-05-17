@@ -25,6 +25,12 @@
   align-items: center;
 }
 
-.navbar__right button {
-  margin-left: 10px;
+.navbar__rightButton {
+  margin-left: 15px !important;
+  color: white !important;
+}
+
+.navbar__rightLink {
+  text-decoration: none;
+  color: black;
 }

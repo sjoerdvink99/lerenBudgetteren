@@ -1,7 +1,8 @@
 import React from "react";
 import "./Navbar.css";
-import { Button } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import { useStateValue } from "../StateProvider";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [{ user }] = useStateValue();
@@ -31,15 +32,39 @@ export default function Navbar() {
       <div className='navbar__right'>
         {!user ? (
           <>
-            <p>Login</p>
-            <Button variant='contained' color='primary'>
+            <Typography
+              component={Link}
+              to='/login'
+              variant='body1'
+              className='navbar__rightLink'
+            >
+              Login
+            </Typography>
+            <Button
+              component={Link}
+              to='/register'
+              variant='contained'
+              color='primary'
+              className='navbar__rightButton'
+            >
               Become a member
             </Button>
           </>
         ) : (
           <>
-            <p>Settings</p>
-            <Button variant='contained' color='primary'>
+            <Typography
+              component={Link}
+              to='/settings'
+              variant='body1'
+              className='navbar__rightLink'
+            >
+              Settings
+            </Typography>
+            <Button
+              variant='contained'
+              color='primary'
+              className='navbar__rightButton'
+            >
               My plan
             </Button>
           </>

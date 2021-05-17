@@ -1,12 +1,29 @@
+.landingpage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .landing {
-  min-height: 100vh;
+  flex: 1;
   background-color: whitesmoke;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .landing__right,
 .landing__left {
-  flex: 0.45;
+  flex: 0.4;
   margin: 30px auto;
+}
+
+.landing__left a {
+  margin-right: 8px;
+  margin-top: 7px;
+  border-radius: 30px !important;
+}
+
+.landing__leftButtonsLeft {
+  color: white !important;
 }

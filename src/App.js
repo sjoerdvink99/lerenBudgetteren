@@ -5,7 +5,7 @@ import { actionTypes } from "./reducer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/core";
 import theme from "./theme";
-import { Login, Navbar, Landing, Education } from "./components";
+import { Login, Navbar, Landing, Education, Register } from "./components";
 import "./App.css";
 
 function App() {
@@ -38,6 +38,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={Landing} />
             <Route exact path='/login' component={Login} />
+            <Route exact path='/register' component={Register} />
           </Switch>
         ) : (
           <>

@@ -4,6 +4,7 @@ import { actionTypes } from "../reducer";
 import { Link, useHistory } from "react-router-dom";
 import { TextField, FormLabel, Button } from "@material-ui/core";
 import { auth, storage, db } from "../firebase";
+import logo from "../assets/logo.png";
 import "./Register.css";
 
 export default function Register() {
@@ -66,8 +67,8 @@ export default function Register() {
   return (
     <div className='register'>
       <div className='register__container'>
-        <img src='#' alt='Leren budgetteren logo' />
-        <h1>Registreren bij Vital Workforce</h1>
+        <img src={logo} alt='Leren budgetteren logo' />
+        <h1>Registreren bij Leren budgetteren</h1>
         <TextField
           type='text'
           label='Name'

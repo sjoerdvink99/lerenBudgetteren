@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import { Button, Typography } from "@material-ui/core";
+import logo from "../assets/logo.png";
 import { useStateValue } from "../StateProvider";
 import { Link } from "react-router-dom";
 
@@ -10,7 +11,9 @@ export default function Navbar() {
   return (
     <div className='navbar'>
       <div className='navbar__left'>
-        <img src='#' alt='Leren budgetteren logo' />
+        <Link to='/'>
+          <img src={logo} alt='Leren budgetteren logo' />
+        </Link>
       </div>
       <div className='navbar__middle'>
         {!user ? (

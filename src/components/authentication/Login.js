@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useStateValue } from "../StateProvider";
-import { actionTypes } from "../reducer";
+import { useStateValue } from "../../StateProvider";
+import { actionTypes } from "../../reducer";
 import { Link } from "react-router-dom";
 import { TextField, Button } from "@material-ui/core";
-import { auth } from "../firebase";
-import logo from "../assets/logo.png";
+import { auth } from "../../firebase";
+import logo from "../../assets/logo.png";
 import "./Login.css";
 
 export default function Login() {
@@ -29,7 +29,9 @@ export default function Login() {
   return (
     <div className='login'>
       <div className='login__container'>
-        <img src={logo} alt='Leren budgetteren logo' />
+        <Link to='/'>
+          <img src={logo} alt='Leren budgetteren logo' />
+        </Link>
         <h1>Login at Leren Budgetteren</h1>
         <TextField
           type='text'

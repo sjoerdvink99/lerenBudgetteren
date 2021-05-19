@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useStateValue } from "../StateProvider";
-import { actionTypes } from "../reducer";
+import { useStateValue } from "../../StateProvider";
+import { actionTypes } from "../../reducer";
 import { Link, useHistory } from "react-router-dom";
 import { TextField, FormLabel, Button } from "@material-ui/core";
-import { auth, storage, db } from "../firebase";
-import logo from "../assets/logo.png";
+import { auth, storage, db } from "../../firebase";
+import logo from "../../assets/logo.png";
 import "./Register.css";
 
 export default function Register() {
@@ -67,7 +67,9 @@ export default function Register() {
   return (
     <div className='register'>
       <div className='register__container'>
-        <img src={logo} alt='Leren budgetteren logo' />
+        <Link to='/'>
+          <img src={logo} alt='Leren budgetteren logo' />
+        </Link>
         <h1>Registreren bij Leren budgetteren</h1>
         <TextField
           type='text'

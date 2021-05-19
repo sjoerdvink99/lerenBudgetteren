@@ -3,3 +3,4 @@ export { default as Navbar } from "./Navbar";
 export { default as Landing } from "./landing/Landing";
 export { default as Education } from "./Education";
 export { default as Register } from "./authentication/Register";
+export { default as NoPageFound } from "./NoPageFound";

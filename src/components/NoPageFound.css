@@ -1,0 +1,16 @@
+.nopagefound {
+  display: flex;
+  flex-direction: column;
+}
+
+.nopagefound__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.nopagefound__container img {
+  width: 300px;
+}

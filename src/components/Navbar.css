@@ -2,12 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
   padding: 20px 30px;
+  background-color: white;
+  z-index: 100;
+  border-bottom: 1px solid whitesmoke;
 }
 
 .navbar__left img {
   width: 200px;
   object-fit: contain;
+  cursor: pointer;
 }
 
 .navbar__middle ul {
@@ -17,6 +23,7 @@
 
 .navbar__middle ul li {
   margin: 0px 10px;
+  cursor: pointer;
 }
 
 .navbar__right {

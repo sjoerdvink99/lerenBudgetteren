@@ -4,24 +4,35 @@ import { Button, Typography } from "@material-ui/core";
 import logo from "../assets/logo.png";
 import { useStateValue } from "../StateProvider";
 import { Link } from "react-router-dom";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 export default function Navbar() {
   const [{ user }] = useStateValue();
 
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <div className='navbar'>
       <div className='navbar__left'>
-        <Link to='/'>
-          <img src={logo} alt='Leren budgetteren logo' />
-        </Link>
+        <img src={logo} onClick={toggleHome} alt='Leren budgetteren logo' />
       </div>
       <div className='navbar__middle'>
         {!user ? (
           <ul>
-            <li>Home</li>
-            <li>Product</li>
-            <li>Pricing</li>
-            <li>Contact</li>
+            <ScrollLink to='header' smooth='true' offset={-100} duration={500}>
+              <li>Home</li>
+            </ScrollLink>
+            <ScrollLink to='product' smooth='true' offset={-100} duration={500}>
+              <li>Product</li>
+            </ScrollLink>
+            <ScrollLink to='pricing' smooth='true' offset={-100} duration={500}>
+              <li>Pricing</li>
+            </ScrollLink>
+            <ScrollLink to='contact' smooth='true' offset={-100} duration={500}>
+              <li>Contact</li>
+            </ScrollLink>
           </ul>
         ) : (
           <ul>

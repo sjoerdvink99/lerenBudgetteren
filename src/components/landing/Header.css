@@ -1,6 +1,6 @@
 .header {
   flex: 1;
-  background-color: whitesmoke;
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +15,6 @@
 .header__left a {
   margin-right: 8px;
   margin-top: 7px;
-  border-radius: 30px !important;
 }
 
 .header__leftButtonsLeft {

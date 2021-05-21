@@ -12,6 +12,11 @@ import {
   Education,
   Register,
   NoPageFound,
+  Footer,
+  Dashboard,
+  Investments,
+  Profile,
+  Settings,
 } from "./components";
 import "./App.css";
 
@@ -52,8 +57,13 @@ function App() {
           <>
             <Navbar />
             <Switch>
+              <Route exact path='/' component={Dashboard} />
               <Route exact path='/education' component={Education} />
+              <Route exact path='/investments' component={Investments} />
+              <Route exact path='/profile' component={Profile} />
+              <Route exact path='/settings' component={Settings} />
             </Switch>
+            <Footer />
           </>
         )}
       </Router>

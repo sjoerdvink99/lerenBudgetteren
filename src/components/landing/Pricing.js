@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Button,
   Typography,
@@ -25,6 +26,8 @@ export default function Pricing() {
             color='primary'
             style={{ color: "white" }}
             variant='contained'
+            component={Link}
+            to='/register'
           >
             Try for free
           </Button>
@@ -57,6 +60,8 @@ export default function Pricing() {
             color='primary'
             style={{ color: "white" }}
             variant='contained'
+            component={Link}
+            to='/register'
           >
             Try for free
           </Button>
@@ -89,6 +94,8 @@ export default function Pricing() {
             color='primary'
             style={{ color: "white" }}
             variant='contained'
+            component={Link}
+            to='/register'
           >
             Try for free
           </Button>

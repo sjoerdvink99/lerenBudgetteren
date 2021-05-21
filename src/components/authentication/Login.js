@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { useStateValue } from "../../StateProvider";
 import { actionTypes } from "../../reducer";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { TextField, Button } from "@material-ui/core";
 import { auth } from "../../firebase";
 import logo from "../../assets/logo.png";
 import "./Login.css";
 
 export default function Login() {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [dispatch] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
 
   const login = () => {
     auth
@@ -24,6 +25,7 @@ export default function Login() {
       .catch((error) => alert(error.message));
     setEmail("");
     setPassword("");
+    history.push("/");
   };
 
   return (

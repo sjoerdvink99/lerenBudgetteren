@@ -21,9 +21,14 @@
   list-style: none;
 }
 
-.navbar__middle ul li {
+.navbar__middle ul a li {
   margin: 0px 10px;
   cursor: pointer;
+}
+
+.navbar__middle ul a {
+  text-decoration: none;
+  color: black;
 }
 
 .navbar__right {
@@ -40,4 +45,8 @@
 .navbar__rightLink {
   text-decoration: none;
   color: black;
+}
+
+.navbar__right .MuiAvatar-root {
+  margin-left: 15px;
 }

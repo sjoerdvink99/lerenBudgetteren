@@ -2,5 +2,18 @@
   background-color: whitesmoke;
   height: 30vh;
   text-align: center;
-  padding: 20px 0px;
+  padding: 50px 0px;
+}
+
+.product__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.product__left,
+.product__right {
+  flex: 0.5;
 }

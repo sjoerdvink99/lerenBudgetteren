@@ -1,6 +1,23 @@
 .contact {
-  height: 30vh;
   background-color: whitesmoke;
   text-align: center;
-  padding: 20px 0px;
+  padding: 50px 0px;
+}
+
+.contact__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.contact__left,
+.contact__right {
+  flex: 0.5;
+}
+
+.contact__right img {
+  height: 150px;
+  margin: 0px auto;
 }

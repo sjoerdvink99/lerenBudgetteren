@@ -1,3 +1,16 @@
 .education {
+  flex: 1;
   background-color: whitesmoke;
+}
+
+.education__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.education__post {
+  flex-direction: 0.2;
+  padding: 20px;
+  height: 30vh;
 }

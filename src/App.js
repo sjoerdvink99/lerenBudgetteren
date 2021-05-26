@@ -10,6 +10,7 @@ import {
   Navbar,
   Landing,
   Education,
+  Post,
   Register,
   NoPageFound,
   Footer,
@@ -59,6 +60,7 @@ function App() {
             <Switch>
               <Route exact path='/' component={Dashboard} />
               <Route exact path='/education' component={Education} />
+              <Route path='/education/:postId' component={Post} />
               <Route exact path='/investments' component={Investments} />
               <Route exact path='/profile' component={Profile} />
               <Route exact path='/settings' component={Settings} />

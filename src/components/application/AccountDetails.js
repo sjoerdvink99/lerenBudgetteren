@@ -1,10 +1,14 @@
 import React from "react";
+import ProfileSidebar from './ProfileSidebar'
 import "./AccountDetails.css";
 
 export default function AccountDetails() {
   return (
     <div className='accountDetails'>
-      <h1>Account details</h1>
+      <ProfileSidebar />
+      <div className='accountDetails__container'>
+        <h1>Account details</h1>
+      </div>
     </div>
   );
 }

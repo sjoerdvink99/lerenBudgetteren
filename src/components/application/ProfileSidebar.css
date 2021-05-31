@@ -1,14 +1,9 @@
-.profile {
-  flex: 1;
-  display: flex;
-}
-
-.profile__sidebar {
+.profilesidebar {
   flex: 0.2;
   border-right: 1px solid whitesmoke;
 }
 
-.profile__sidebar .MuiAvatar-root {
+.profilesidebar .MuiAvatar-root {
   width: 100px;
   height: 100px;
   margin: 15px auto;

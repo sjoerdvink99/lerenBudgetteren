@@ -1,10 +1,14 @@
 import React from 'react'
+import ProfileSidebar from './ProfileSidebar'
 import './Privacy.css'
 
 export default function Privacy() {
     return (
         <div className='privacy'>
-            <h1>Privacy!!!</h1>
+            <ProfileSidebar />
+            <div className='privacy__container'>
+                <h1>Privacy!!!</h1>
+            </div>
         </div>
     )
 }

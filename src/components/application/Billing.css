@@ -1,3 +1,8 @@
 .billing {
+    display: flex;
+    flex: 1;
+}
+
+.billing__container {
     flex: 0.8;
 }

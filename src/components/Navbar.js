@@ -138,9 +138,6 @@ export default function Navbar() {
                         id='menu-list-grow'
                         onKeyDown={handleListKeyDown}
                       >
-                        <MenuItem onClick={() => history.push("/settings")}>
-                          Settings
-                        </MenuItem>
                         <MenuItem onClick={logoutOfApp}>Log out</MenuItem>
                       </MenuList>
                     </ClickAwayListener>

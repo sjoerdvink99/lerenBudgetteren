@@ -27,7 +27,9 @@ export default function Education() {
   return (
     <div className='education'>
       <Typography variant='h4'>Education</Typography>
-      <Typography variant='h6'>Check out the latest posts</Typography>
+      <Typography variant='h6' style={{ marginBottom: "75px" }}>
+        Check out the latest posts
+      </Typography>
       <div className='education__container'>
         {posts?.map(({ id, title, imageUrl, timestamp }) => (
           <div

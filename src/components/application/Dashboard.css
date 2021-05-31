@@ -1,18 +1,19 @@
 .dashboard {
-    flex: 1;
+  flex: 1;
+  background-color: whitesmoke;
 }
 
 .dashboard__other {
-    display: flex;
-    width: 80%;
-    margin: 30px auto;
-    justify-content: space-between;
+  display: flex;
+  width: 80%;
+  margin: 30px auto;
+  justify-content: space-between;
 }
 
 .dashboard__left,
 .dashboard__right {
-    flex: .45;
-    padding: 10px;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+  flex: 0.45;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
 }

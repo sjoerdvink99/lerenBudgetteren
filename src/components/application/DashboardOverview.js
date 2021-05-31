@@ -5,7 +5,6 @@ import IncomeExpenseRow from "./IncomeExpenseRow";
 import './DashboardOverview.css'
 
 export default function DashboardOverview({income, expenses}) {
-
     const headers = [
         { label: "ID", key: "id" },
         { label: "Timestamp", key: "timestamp" },

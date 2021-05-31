@@ -26,14 +26,15 @@ export default function Education() {
 
   return (
     <div className='education'>
-      <Typography variant='h5'>Education</Typography>
+      <Typography variant='h4'>Education</Typography>
+      <Typography variant='h6'>Check out the latest posts</Typography>
       <div className='education__container'>
         {posts?.map(({ id, title, imageUrl, timestamp }) => (
           <div
             key={id}
             className='education__post'
             style={{
-              backgroundImage: `url(${imageUrl}) rgba(0, 0, 0, 0.4)`,
+              background: `url(${imageUrl}) rgba(0, 0, 0, 0.4)`,
               backgroundBlendMode: "multiply",
               backgroundPosition: "top",
               backgroundSize: "cover",

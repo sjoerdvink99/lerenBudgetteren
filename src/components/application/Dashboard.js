@@ -3,6 +3,7 @@ import {useStateValue} from '../../StateProvider'
 import Chart from './Chart'
 import {db} from '../../firebase'
 import DashboardOverview from "./DashboardOverview";
+import ArticleRecommendation from "./ArticleRecommendation";
 import "./Dashboard.css";
 import { Typography } from "@material-ui/core";
 
@@ -46,7 +47,7 @@ export default function Dashboard() {
           <Chart data={income} />
         </div>
         <div className='dashboard__right'>
-          <Typography variant='h5'>Articles for you</Typography>
+          <ArticleRecommendation />
         </div>
       </div>
     </div>

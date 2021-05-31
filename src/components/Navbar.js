@@ -110,13 +110,6 @@ export default function Navbar() {
           </>
         ) : (
           <>
-            <Button
-              variant='contained'
-              color='primary'
-              className='navbar__rightButton'
-            >
-              My plan
-            </Button>
             <Avatar
               ref={anchorRef}
               aria-controls={open ? "menu-list-grow" : undefined}

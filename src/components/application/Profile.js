@@ -9,6 +9,9 @@ import {
   AccountBox,
 } from "@material-ui/icons";
 import AccountDetails from "./AccountDetails";
+import Subscription from './Subscription'
+import Privacy from './Privacy'
+import Billing from './Billing'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Avatar } from "@material-ui/core";
 
@@ -39,7 +42,10 @@ export default function Profile() {
       <div className='profile__main'>
         <Router>
           <Switch>
-            <Route exact path='profile' component={AccountDetails} />
+            <Route exact path='/profile' component={AccountDetails} />
+            <Route exact path='/profile/subscription' component={Subscription} />
+            <Route exact path='/profile/privacy' component={Privacy} />
+            <Route exact path='/profile/billing' component={Billing} />
           </Switch>
         </Router>
       </div>

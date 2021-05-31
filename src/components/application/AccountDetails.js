@@ -3,7 +3,7 @@ import "./AccountDetails.css";
 
 export default function AccountDetails() {
   return (
-    <div>
+    <div className='accountDetails'>
       <h1>Account details</h1>
     </div>
   );

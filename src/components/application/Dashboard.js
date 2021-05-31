@@ -5,7 +5,6 @@ import {db} from '../../firebase'
 import DashboardOverview from "./DashboardOverview";
 import ArticleRecommendation from "./ArticleRecommendation";
 import "./Dashboard.css";
-import { Typography } from "@material-ui/core";
 
 export default function Dashboard() {
   const [{user}] = useStateValue()

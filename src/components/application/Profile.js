@@ -16,7 +16,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Avatar } from "@material-ui/core";
 
 export default function Profile() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
 
   return (
     <div className='profile'>

@@ -41,7 +41,7 @@ export default function Chart({income, expenses}) {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    //
+    setData()
   }, [])
 
   return (

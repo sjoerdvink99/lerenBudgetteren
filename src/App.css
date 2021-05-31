@@ -1,3 +1,9 @@
 body {
   --maincolor-blue: #23a6f0;
 }
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

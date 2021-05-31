@@ -1,9 +1,24 @@
 import React from 'react'
+import { CSVLink } from "react-csv";
 import { Typography, Button } from "@material-ui/core";
 import IncomeExpenseRow from "./IncomeExpenseRow";
 import './DashboardOverview.css'
 
 export default function DashboardOverview({income, expenses}) {
+
+    const headers = [
+        { label: "ID", key: "id" },
+        { label: "Timestamp", key: "timestamp" },
+        { label: "Title", key: "title" },
+        { label: "Amount", key: "amount" },
+      ];
+    
+      const csvReport = {
+        filename: 'incomeAndExpenses.csv',
+        headers: headers,
+        data: income,
+      };
+
     return (
     <div className='dashboardOverview'>
         <div className='dashboardOverview__buttons'>
@@ -24,7 +39,9 @@ export default function DashboardOverview({income, expenses}) {
         </div>
         <div className='dashboardOverview__export'>
             <Button color='primary' variant='contained'>Predictions</Button>
-            <Button color='primary' variant='outlined'>Export to Excel</Button>
+            <CSVLink {...csvReport}>
+                <Button color='primary' variant='outlined'>Export to Excel</Button>
+            </CSVLink>
         </div>
     </div>
     )

@@ -14,7 +14,7 @@ export default function Dashboard() {
 
     useEffect(() => {
     db.collection(`users/${user.uid}/income`)
-      .limit(4)
+      .limit(3)
       .onSnapshot((snapshot) => 
         setIncome(snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -28,7 +28,7 @@ export default function Dashboard() {
 
     useEffect(() => {
     db.collection(`users/${user.uid}/expenses`)
-      .limit(4)
+      .limit(3)
       .onSnapshot((snapshot) => 
         setExpenses(snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -39,12 +39,13 @@ export default function Dashboard() {
         )
       ) 
     }, [user.uid])
+
   return (
     <div className='dashboard'>
       <DashboardOverview income={income} expenses={expenses} />
       <div className='dashboard__other'>
         <div className='dashboard__left'>
-          <Chart data={income} />
+          <Chart income={income} expenses={expenses} />
         </div>
         <div className='dashboard__right'>
           <ArticleRecommendation />

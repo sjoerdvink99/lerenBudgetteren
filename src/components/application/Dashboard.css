@@ -1,3 +1,7 @@
+.dashboard {
+    flex: 1;
+}
+
 .dashboard__other {
     display: flex;
     width: 80%;

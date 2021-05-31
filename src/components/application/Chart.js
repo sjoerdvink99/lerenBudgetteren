@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Line } from "react-chartjs-2";
 import "./Chart.css";
 
@@ -37,7 +37,13 @@ const options = {
     },
   };
 
-export default function Chart({data}) {
+export default function Chart({income, expenses}) {
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    //
+  }, [])
+
   return (
     <div className='chart'>
       {data?.length > 0 && (

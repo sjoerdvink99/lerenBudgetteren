@@ -1,6 +1,6 @@
 .profile {
+  flex: 1;
   display: flex;
-  min-height: 83vh;
 }
 
 .profile__sidebar {

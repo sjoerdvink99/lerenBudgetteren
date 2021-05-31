@@ -55,7 +55,7 @@ function App() {
             <Route path='*' component={NoPageFound} />
           </Switch>
         ) : (
-          <>
+          <div className='app'>
             <Navbar />
             <Switch>
               <Route exact path='/' component={Dashboard} />
@@ -66,7 +66,7 @@ function App() {
               <Route exact path='/settings' component={Settings} />
             </Switch>
             <Footer />
-          </>
+          </div>
         )}
       </Router>
     </ThemeProvider>

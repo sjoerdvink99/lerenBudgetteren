@@ -1,32 +1,14 @@
-.dashboard {
+.dashboard__other {
     display: flex;
-    flex-direction: column;
     width: 80%;
     margin: 30px auto;
-}
-
-.dashboard__buttons {
-    display: flex;
     justify-content: space-between;
 }
 
-.dashboard__overview {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.dashboard__income,
-.dashboard__expense {
-    flex: 0.45;
-}
-
-.dashboard__export {
-    display: flex;
-    width: 320px;
-    margin: 5px auto;
-    justify-content: space-between;
-    align-items: center;
+.dashboard__left,
+.dashboard__right {
+    flex: .45;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }

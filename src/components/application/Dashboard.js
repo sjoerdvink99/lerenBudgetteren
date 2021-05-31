@@ -1,16 +1,17 @@
 import React, {useState, useEffect} from "react";
-import { Typography, Button } from "@material-ui/core";
-import IncomeExpenseRow from "./IncomeExpenseRow";
 import {useStateValue} from '../../StateProvider'
+import Chart from './Chart'
 import {db} from '../../firebase'
+import DashboardOverview from "./DashboardOverview";
 import "./Dashboard.css";
+import { Typography } from "@material-ui/core";
 
 export default function Dashboard() {
   const [{user}] = useStateValue()
-  const [income, setIncome] = useState([])
-  const [expenses, setExpenses] = useState([])
+    const [income, setIncome] = useState([])
+    const [expenses, setExpenses] = useState([])
 
-  useEffect(() => {
+    useEffect(() => {
     db.collection(`users/${user.uid}/income`)
       .limit(4)
       .onSnapshot((snapshot) => 
@@ -22,9 +23,9 @@ export default function Dashboard() {
         }))
         )
       ) 
-  }, [user.uid])
+    }, [user.uid])
 
-  useEffect(() => {
+    useEffect(() => {
     db.collection(`users/${user.uid}/expenses`)
       .limit(4)
       .onSnapshot((snapshot) => 
@@ -36,29 +37,17 @@ export default function Dashboard() {
         }))
         )
       ) 
-  }, [user.uid])
-
+    }, [user.uid])
   return (
     <div className='dashboard'>
-      <div className='dashboard__buttons'>
-        <Typography variant='h4'>Income and expenses</Typography>
-        <Button color='primary' variant='contained'>Add</Button>
-      </div>
-      <div className='dashboard__overview'>
-        <div className='dashboard__income'>
-          {income.map(({title, timestamp, amount}) => (
-            <IncomeExpenseRow title={title} timestamp={timestamp} amount={amount} />
-          ))}
+      <DashboardOverview income={income} expenses={expenses} />
+      <div className='dashboard__other'>
+        <div className='dashboard__left'>
+          <Chart data={income} />
         </div>
-        <div className='dashboard__expense'>
-        {expenses.map(({title, timestamp, amount}) => (
-            <IncomeExpenseRow title={title} timestamp={timestamp} amount={amount} />
-          ))}
+        <div className='dashboard__right'>
+          <Typography variant='h5'>Articles for you</Typography>
         </div>
-      </div>
-      <div className='dashboard__export'>
-        <Button color='primary' variant='contained'>Predictions</Button>
-        <Button color='primary' variant='outlined'>Export to Excel</Button>
       </div>
     </div>
   );

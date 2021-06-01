@@ -6,8 +6,22 @@
 .accountDetails__container {
   flex: 0.8;
   display: flex;
+  flex-direction: column;
+}
+
+.accountDetails__containerHead {
+  height: 100px;
+  background-color: whitesmoke;
+  margin-bottom: 50px;
+}
+
+.accountDetails__containerHead h4 {
+  margin-top: 25px;
+}
+
+.accountDetails__containerMain {
+  display: flex;
   justify-content: space-evenly;
-  padding-top: 30px;
 }
 
 .accountDetails__containerLeft {

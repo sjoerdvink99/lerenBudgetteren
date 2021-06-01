@@ -1,8 +1,32 @@
 .accountDetails {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
 }
 
 .accountDetails__container {
-    flex: 0.8;
+  flex: 0.8;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 30px;
+}
+
+.accountDetails__containerLeft {
+  flex: 0.45;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.accountDetails__containerLeft .MuiFormControl-root {
+  margin-bottom: 10px !important;
+}
+
+.accountDetails__containerRight {
+  flex: 0.45;
+}
+
+.accountDetails__containerRight .MuiAvatar-root {
+  margin: auto;
+  height: 250px;
+  width: 250px;
 }

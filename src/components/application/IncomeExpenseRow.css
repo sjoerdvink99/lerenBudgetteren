@@ -17,3 +17,7 @@
   flex: 1;
   margin-left: 10px;
 }
+
+.incomeExpenseRow__image img {
+  height: 75px;
+}

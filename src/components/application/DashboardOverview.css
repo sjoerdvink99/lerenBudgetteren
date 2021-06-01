@@ -1,32 +1,32 @@
 .dashboardOverview {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 30px auto;
 }
 
 .dashboardOverview__buttons {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .dashboardOverview__overview {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .dashboardOverview__income,
 .dashboardOverview__expense {
-    flex: 0.45;
+  flex: 0.45;
 }
 
 .dashboardOverview__export {
-    display: flex;
-    width: 320px;
-    margin: 5px auto;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  width: 320px;
+  margin: 5px auto;
+  justify-content: space-between;
+  align-items: center;
 }

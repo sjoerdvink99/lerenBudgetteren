@@ -21,7 +21,7 @@ export default function DashboardOverview({ income, expenses }) {
   return (
     <div className='dashboardOverview'>
       <div className='dashboardOverview__buttons'>
-        <Typography variant='h4'>Income and expenses</Typography>
+        <Typography variant='h4'>Fakka niffo</Typography>
         <Button color='primary' variant='contained'>
           Add
         </Button>

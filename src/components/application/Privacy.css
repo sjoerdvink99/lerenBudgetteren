@@ -1,8 +1,18 @@
 .privacy {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
 }
 
 .privacy__container {
-    flex: 0.8;
+  flex: 0.8;
+}
+
+.privacy__head {
+  height: 100px;
+  background-color: whitesmoke;
+  margin-bottom: 50px;
+}
+
+.privacy__head h4 {
+  padding-top: 25px;
 }

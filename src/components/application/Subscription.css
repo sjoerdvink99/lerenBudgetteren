@@ -1,8 +1,45 @@
 .subscription {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
 }
 
 .subscription__container {
-    flex: 0.8;
+  flex: 0.8;
+}
+
+.subscription__head {
+  height: 100px;
+  background-color: whitesmoke;
+  margin-bottom: 50px;
+}
+
+.subscription__head h4 {
+  padding-top: 25px;
+}
+
+.subscription__main {
+  flex: 1;
+}
+
+.subscription__type {
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+  width: 300px;
+  margin: 5px auto;
+  padding: 20px;
+}
+
+.subscription__type hr {
+  width: 40%;
+  margin: 10px auto;
+  color: whitesmoke;
+  background-color: whitesmoke;
+  border-radius: 50px;
+  opacity: 0.3;
+  height: 1px;
+}
+
+.subscription__main .MuiButtonBase-root {
+  display: flex;
+  margin: 5px auto !important;
 }

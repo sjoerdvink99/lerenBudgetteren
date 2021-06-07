@@ -1,18 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useStateValue } from "../../StateProvider";
 import ProfileSidebar from "./ProfileSidebar";
+import { db, auth } from "../../firebase";
 import "./AccountDetails.css";
 import { Button, TextField, Avatar, Typography } from "@material-ui/core";
 
 export default function AccountDetails() {
   const [{ user }] = useStateValue();
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
+  const [gebruiker, setGebruiker] = useState("");
+
+  useEffect(() => {
+    db.doc(`users/${user.uid}`)
+      .get()
+      .then((user) =>
+        setGebruiker({
+          displayName: user.data().displayName,
+          email: user.data().email,
+          telefoon: user.data().telefoon,
+        })
+      )
+      .catch((error) => alert(error.message));
+  }, [user.uid]);
 
   const updateProfile = () => {
-    //
+    auth.currentUser
+      .updateProfile({
+        displayName: gebruiker.displayName,
+        email: gebruiker.email,
+      })
+      .then(() => {
+        db.doc(`users/${user.uid}`).update({
+          displayName: gebruiker.displayName,
+          email: gebruiker.email,
+          telefoon: gebruiker.telefoon,
+        });
+      })
+      .catch((error) => alert(error.message));
   };
 
   return (
@@ -29,26 +52,35 @@ export default function AccountDetails() {
             <TextField
               variant='outlined'
               label='First name'
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
-            <TextField
-              variant='outlined'
-              label='Last name'
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              value={gebruiker?.displayName}
+              onChange={(e) =>
+                setGebruiker({ ...gebruiker, displayName: e.target.value })
+              }
             />
             <TextField
               variant='outlined'
               label='Phone'
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              value={gebruiker?.telefoon}
+              onChange={(e) =>
+                setGebruiker({ ...gebruiker, telefoon: e.target.value })
+              }
             />
             <TextField
               variant='outlined'
               label='Email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              value={gebruiker?.email}
+              onChange={(e) =>
+                setGebruiker({ ...gebruiker, email: e.target.value })
+              }
             />
             <Button color='primary' variant='contained' onClick={updateProfile}>
               Update profile

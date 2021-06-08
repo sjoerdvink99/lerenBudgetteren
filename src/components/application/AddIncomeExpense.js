@@ -123,7 +123,11 @@ export default function AddIncomeExpense({ open, setOpen }) {
         <Button onClick={handleClose} color='primary'>
           Cancel
         </Button>
-        <Button onClick={submitForm} color='primary'>
+        <Button
+          onClick={submitForm}
+          color='primary'
+          disabled={!type || !title || !category || !amount || !date}
+        >
           Add
         </Button>
       </DialogActions>

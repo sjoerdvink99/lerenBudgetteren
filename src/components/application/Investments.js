@@ -3,7 +3,32 @@ import Portfolio from "./Portfolio";
 import { db } from "../../firebase";
 import { Typography } from "@material-ui/core";
 import { useStateValue } from "../../StateProvider";
+import { Doughnut } from "react-chartjs-2";
 import "./Investments.css";
+import { TextField, Button } from "@material-ui/core";
+
+const options = {
+  type: "doughnut",
+  elements: {
+    point: {
+      radius: 0,
+    },
+  },
+  maintainAspectRatio: false,
+  tooltips: {
+    mode: "index",
+    intersect: false,
+  },
+  parsing: {
+    xAxisKey: "ticker",
+    yAxisKey: "amount",
+  },
+  plugins: {
+    legend: {
+      display: false,
+    },
+  },
+};
 
 export default function Investments() {
   const [{ user }] = useStateValue();
@@ -22,15 +47,23 @@ export default function Investments() {
       )
     );
   }, [user.uid]);
+
   return (
     <div className='investments'>
       <Portfolio stocks={stocks} />
       <div className='investments__other'>
         <div className='investments__left'>
-          <Typography variant='h5'>Diversivication</Typography>
+          <Typography variant='h5'>Portfolio diversity</Typography>
+          <Doughnut data={stocks} options={options} />
         </div>
         <div className='investments__right'>
           <Typography variant='h5'>Search stocks</Typography>
+          <div className='investments__search'>
+            <TextField variant='outlined' label='Ticker' fullWidth />
+            <Button variant='outlined' color='primary'>
+              Search
+            </Button>
+          </div>
         </div>
       </div>
     </div>

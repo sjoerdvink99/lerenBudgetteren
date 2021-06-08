@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Typography,
   TableContainer,
@@ -9,29 +9,11 @@ import {
   TableBody,
   Button,
 } from "@material-ui/core";
-import { db } from "../../firebase";
 import AddStock from "./AddStock";
-import { useStateValue } from "../../StateProvider";
 import "./Portfolio.css";
 
-export default function Portfolio() {
-  const [{ user }] = useStateValue();
-  const [stocks, setStocks] = useState([]);
+export default function Portfolio({ stocks }) {
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    db.collection(`users/${user.uid}/stocks`).onSnapshot((snapshot) =>
-      setStocks(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ticker: doc.data().ticker,
-          company: doc.data().company,
-          amount: doc.data().amount,
-          GAK: doc.data().GAK,
-        }))
-      )
-    );
-  }, [user.uid]);
 
   return (
     <div className='portfolio'>

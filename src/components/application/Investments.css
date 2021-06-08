@@ -2,3 +2,19 @@
   flex: 1;
   background-color: whitesmoke;
 }
+
+.investments__other {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.investments__left,
+.investments__right {
+  flex: 0.45;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}

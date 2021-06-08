@@ -25,7 +25,12 @@ export default function AddStock({ open, setOpen }) {
   const submitStockForm = (e) => {
     e.preventDefault();
 
-    db.collection(`users/${user.uid}/stocks`).add({});
+    db.collection(`users/${user.uid}/stocks`).add({
+      ticker: ticker,
+      company: company,
+      amount: amount,
+      GAK: GAK,
+    });
 
     setOpen(false);
   };

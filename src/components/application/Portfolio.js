@@ -26,6 +26,8 @@ export default function Portfolio() {
           id: doc.id,
           ticker: doc.data().ticker,
           company: doc.data().company,
+          amount: doc.data().amount,
+          GAK: doc.data().GAK,
         }))
       )
     );
@@ -50,13 +52,16 @@ export default function Portfolio() {
               <TableCell>Ticker</TableCell>
               <TableCell>Company</TableCell>
               <TableCell>GAK</TableCell>
+              <TableCell>Amount</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {stocks?.map(({ id, ticker, company }) => (
-              <TableRow>
+            {stocks?.map(({ id, ticker, company, GAK, amount }) => (
+              <TableRow key={id}>
                 <TableCell>{ticker}</TableCell>
                 <TableCell>{company}</TableCell>
+                <TableCell>{GAK}</TableCell>
+                <TableCell>{amount}</TableCell>
               </TableRow>
             ))}
           </TableBody>

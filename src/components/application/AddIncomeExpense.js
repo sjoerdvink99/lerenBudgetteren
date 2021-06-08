@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Dialog,
   DialogTitle,
@@ -16,15 +16,32 @@ import {
   MenuItem,
   Select,
 } from "@material-ui/core";
+import { db } from "../../firebase";
+import { useStateValue } from "../../StateProvider";
 import "./AddIncomeExpense.css";
 
 export default function AddIncomeExpense({ open, setOpen }) {
+  const [{ user }] = useStateValue();
+  const [type, setType] = useState("");
+  const [title, setTitle] = useState("");
+  const [category, setCategory] = useState("");
+  const [amount, setAmount] = useState("");
+  const [date, setDate] = useState("");
+
   const handleClose = () => {
     setOpen(false);
   };
 
   const submitForm = (e) => {
     e.preventDefault();
+
+    db.collection(`users/${user.uid}/${type}`).add({
+      title: title,
+      category: category,
+      amount: amount,
+      date: date,
+    });
+
     setOpen(false);
   };
 
@@ -43,14 +60,21 @@ export default function AddIncomeExpense({ open, setOpen }) {
         <TextField
           autoFocus
           margin='dense'
-          id='name'
           label='Title'
-          type='email'
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
           fullWidth
         />
         <FormControl component='fieldset'>
           <FormLabel component='legend'>Type?</FormLabel>
-          <RadioGroup row aria-label='position' defaultValue='top' name='Type'>
+          <RadioGroup
+            row
+            aria-label='position'
+            defaultValue='top'
+            value={type}
+            onChange={(e) => setType(e.target.value)}
+            name='Type'
+          >
             <FormControlLabel
               value='Income'
               control={<Radio color='primary' />}
@@ -65,29 +89,34 @@ export default function AddIncomeExpense({ open, setOpen }) {
         </FormControl>
         <InputLabel>Categorie</InputLabel>
         <FormControl variant='outlined' fullWidth>
-          <Select name='categorie' value='categorie'>
-            <MenuItem value='Salary'>Salary</MenuItem>
-            <MenuItem value='Supermarket'>Supermarket</MenuItem>
-            <MenuItem value='Phone subscription'>Phone subscription</MenuItem>
+          <Select
+            name='categorie'
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <MenuItem value='salary'>Salary</MenuItem>
+            <MenuItem value='supermarket'>Supermarket</MenuItem>
+            <MenuItem value='phone'>Phone subscription</MenuItem>
           </Select>
         </FormControl>
         <TextField
           autoFocus
           margin='dense'
-          id='name'
           label='Amount'
-          type='email'
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
           fullWidth
         />
         <TextField
           autoFocus
           margin='dense'
-          id='name'
           label='Date'
           type='date'
           InputLabelProps={{
             shrink: true,
           }}
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
           fullWidth
         />
       </DialogContent>

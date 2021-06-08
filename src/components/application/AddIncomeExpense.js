@@ -18,7 +18,6 @@ import {
 } from "@material-ui/core";
 import { db } from "../../firebase";
 import { useStateValue } from "../../StateProvider";
-import "./AddIncomeExpense.css";
 
 export default function AddIncomeExpense({ open, setOpen }) {
   const [{ user }] = useStateValue();

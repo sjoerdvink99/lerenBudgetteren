@@ -12,11 +12,11 @@ export default function IncomeExpenseRow({ title, timestamp, amount }) {
       <div className='incomeExpenseRow__image'>
         <img
           src={
-            title === "Supermarket"
+            title === "supermarket"
               ? supermarket
-              : title === "Salary"
+              : title === "salary"
               ? salary
-              : title === "Subscription"
+              : title === "subscription"
               ? subscription
               : other
           }

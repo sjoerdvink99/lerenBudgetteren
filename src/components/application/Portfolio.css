@@ -1,0 +1,10 @@
+.portfolio {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.portfolio__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

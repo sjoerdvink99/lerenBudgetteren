@@ -5,7 +5,7 @@ import { Typography } from "@material-ui/core";
 import { useStateValue } from "../../StateProvider";
 import { Doughnut } from "react-chartjs-2";
 import "./Investments.css";
-import { TextField, Button } from "@material-ui/core";
+import SearchStock from "./SearchStock";
 
 const options = {
   type: "doughnut",
@@ -57,13 +57,7 @@ export default function Investments() {
           <Doughnut data={stocks} options={options} />
         </div>
         <div className='investments__right'>
-          <Typography variant='h5'>Search stocks</Typography>
-          <div className='investments__search'>
-            <TextField variant='outlined' label='Ticker' fullWidth />
-            <Button variant='outlined' color='primary'>
-              Search
-            </Button>
-          </div>
+          <SearchStock />
         </div>
       </div>
     </div>

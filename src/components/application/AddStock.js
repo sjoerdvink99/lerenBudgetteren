@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Dialog,
   DialogTitle,
@@ -11,7 +11,7 @@ import {
 import { db } from "../../firebase";
 import { useStateValue } from "../../StateProvider";
 
-export default function AddStock({ open, setOpen }) {
+export default function AddStock({ open, setOpen, data }) {
   const [{ user }] = useStateValue();
   const [ticker, setTicker] = useState("");
   const [company, setCompany] = useState("");
@@ -21,6 +21,13 @@ export default function AddStock({ open, setOpen }) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    if (data) {
+      setTicker(data.Symbol);
+      setCompany(data.Name);
+    }
+  }, [data]);
 
   const submitStockForm = (e) => {
     e.preventDefault();

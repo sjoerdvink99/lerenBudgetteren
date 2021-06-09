@@ -1,3 +1,7 @@
+.searchStock {
+  padding: 20px;
+}
+
 .searchStock__head {
   display: flex;
   justify-content: space-between;

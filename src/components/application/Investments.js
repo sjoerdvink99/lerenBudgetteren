@@ -19,15 +19,6 @@ const options = {
     mode: "index",
     intersect: false,
   },
-  parsing: {
-    xAxisKey: "ticker",
-    yAxisKey: "amount",
-  },
-  plugins: {
-    legend: {
-      display: false,
-    },
-  },
 };
 
 export default function Investments() {
@@ -54,7 +45,18 @@ export default function Investments() {
       <div className='investments__other'>
         <div className='investments__left'>
           <Typography variant='h5'>Portfolio diversity</Typography>
-          <Doughnut data={stocks} options={options} />
+          <Doughnut
+            data={{
+              labels: ["APPL", "IBM"],
+              datasets: [
+                {
+                  label: "# of Votes",
+                  data: [3, 4],
+                },
+              ],
+            }}
+            options={options}
+          />
         </div>
         <div className='investments__right'>
           <SearchStock />

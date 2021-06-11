@@ -15,7 +15,6 @@ export default function SearchStock() {
     const data = await response.json();
     setStock(data);
     setShowDetails(true);
-    console.log(data);
   };
 
   return (
@@ -39,13 +38,14 @@ export default function SearchStock() {
       </div>
       {showDetails && (
         <>
-          <Typography variant='body1'>name: {stock?.Name}</Typography>
-          <Typography variant='body1'>exchange: {stock?.Exchange}</Typography>
-          <Typography variant='body1'>industry: {stock?.Industry}</Typography>
+          <Typography variant='body1'>Name: {stock?.Name}</Typography>
+          <Typography variant='body1'>Exchange: {stock?.Exchange}</Typography>
+          <Typography variant='body1'>Industry: {stock?.Industry}</Typography>
           <Typography variant='body1'>
-            dividend: {stock?.DividendPerShare}
+            Dividend: {stock?.DividendPerShare}
           </Typography>
           <Typography variant='body1'>EPS: {stock?.EPS}</Typography>
+          <Typography variant='body1'>PE: {stock?.PEGRatio}</Typography>
           <Button
             variant='outlined'
             color='primary'

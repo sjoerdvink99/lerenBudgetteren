@@ -13,6 +13,23 @@
   margin-bottom: 50px;
 }
 
+.preference__head {
+  height: 100px;
+  margin-top: 50px;
+}
+
 .privacy__head h4 {
   padding-top: 25px;
 }
+
+.preference {
+  margin-top: 5px;
+  text-align:left;
+}
+
+.policy {
+  margin-top: 50px;
+  background-color: whitesmoke;
+
+}
+

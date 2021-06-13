@@ -59,6 +59,7 @@ export default function Privacy() {
         </div>
         <Collapsible className='policy' trigger="Privacy policy">
           <p>
+            text hier
             {ReactHtmlParser(articleInfo?.text)}
           </p>
         </Collapsible>

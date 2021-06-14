@@ -6,7 +6,7 @@
 * Setup
 
 ## General info
-This project is a web application about improving the financial situation of low income classes.
+This project is a web application about improving the financial situation of low income classes. The website can be found at https://leren-budgetteren.web.app/.
 
 ## Mission
 'Leren Budgetteren' is the company making a difference in the growing wealth gap. Every day we work towards a better future for everyone. We do this by giving people a clear picture of their current financial state and creating more financial awareness in an educational manner. Investing is no longer just for the rich. This way, they handle the money better, earn more money and create a bright future for them and their descendants.

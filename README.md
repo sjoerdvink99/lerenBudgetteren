@@ -4,6 +4,7 @@
 * Mission
 * Technologies
 * Setup
+* The team
 
 ## General info
 This product stems from a first years Information science project. In total 7 students have worked together on this assignment under the supervision of Gizem. Leren Budgetteren is a web application focussed on improving the financial situation of people from lower income classes. This is done by providing a platform to track your expenses that allows the user to see how much money they really have available to spend. Furthermore, users can learn from selected literature that focusses on improving financial conditions of people from lower income classes. This is especially helpfull to get a deeper understanding of what is causing people to have lower incomes and, more importantly, how to get out of such a situation. Lastly users can track investments they made from inside the app, this allowes users to have their full financial overview packed together on one web-application. The website can be found at https://leren-budgetteren.web.app/.

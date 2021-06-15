@@ -32,3 +32,15 @@
   width: 100% !important;
   margin-bottom: 10px !important;
 }
+
+@media only screen and (max-width: 900px) {
+  .login {
+    background-color: white;
+    height: 60vh;
+  }
+
+  .login__container {
+    padding: 0px;
+    box-shadow: none;
+  }
+}

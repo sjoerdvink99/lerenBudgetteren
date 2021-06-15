@@ -32,3 +32,15 @@
   width: 100% !important;
   margin-bottom: 10px !important;
 }
+
+@media only screen and (max-width: 900px) {
+  .register {
+    background-color: white;
+    height: 90vh;
+  }
+
+  .register__container {
+    padding: 5px 15px;
+    box-shadow: none;
+  }
+}

@@ -16,13 +16,22 @@ import { useStateValue } from "../StateProvider";
 import { Link, useHistory } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import { actionTypes } from "../reducer";
+import NavbarItem from "./NavbarItem";
 import { auth } from "../firebase";
+import {
+  AccountBalance,
+  CastForEducation,
+  Dashboard,
+  LockOpen,
+  Person,
+} from "@material-ui/icons";
 
 export default function Navbar() {
   const history = useHistory();
   const [{ user }, dispatch] = useStateValue();
   const [open, setOpen] = useState(false);
   const anchorRef = useRef(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const logoutOfApp = () => {
     dispatch({
@@ -50,14 +59,18 @@ export default function Navbar() {
     }
   }
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <div className='navbar'>
       <div className='navbar__left'>
         <Link to='/'>
-          <img src={logo} alt='Leren budgetteren logo' />
+          <img src={logo} alt='Leren budgetteren logo' onClick={closeMenu} />
         </Link>
       </div>
-      <div className='navbar__middle'>
+      <div className='navbar__right'>
         {!user ? (
           <ul>
             <ScrollLink to='product' smooth='true' offset={-100} duration={500}>
@@ -69,6 +82,27 @@ export default function Navbar() {
             <ScrollLink to='contact' smooth='true' offset={-100} duration={500}>
               <li>Contact</li>
             </ScrollLink>
+            <li>
+              <Typography
+                component={Link}
+                to='/login'
+                variant='body1'
+                className='navbar__rightLink'
+              >
+                Login
+              </Typography>
+            </li>
+            <li>
+              <Button
+                component={Link}
+                to='/register'
+                variant='contained'
+                color='primary'
+                className='navbar__rightButton'
+              >
+                Become a member
+              </Button>
+            </li>
           </ul>
         ) : (
           <ul>
@@ -84,67 +118,98 @@ export default function Navbar() {
             <Link to='/profile'>
               <li>Profile</li>
             </Link>
+            <li>
+              <Avatar
+                ref={anchorRef}
+                aria-controls={open ? "menu-list-grow" : undefined}
+                aria-haspopup='true'
+                onClick={handleToggle}
+              />
+              <Popper
+                open={open}
+                anchorEl={anchorRef.current}
+                role={undefined}
+                transition
+                disablePortal
+              >
+                {({ TransitionProps, placement }) => (
+                  <Grow
+                    {...TransitionProps}
+                    style={{
+                      transformOrigin:
+                        placement === "bottom" ? "center top" : "center bottom",
+                    }}
+                  >
+                    <Paper>
+                      <ClickAwayListener onClickAway={handleClose}>
+                        <MenuList
+                          autoFocusItem={open}
+                          id='menu-list-grow'
+                          onKeyDown={handleListKeyDown}
+                        >
+                          <MenuItem onClick={logoutOfApp}>Log out</MenuItem>
+                        </MenuList>
+                      </ClickAwayListener>
+                    </Paper>
+                  </Grow>
+                )}
+              </Popper>
+            </li>
           </ul>
         )}
       </div>
-      <div className='navbar__right'>
+      <div
+        className={menuOpen ? "navbar__btn open" : "navbar__btn"}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <div className='navbar__btnBar'></div>
+      </div>
+      <div
+        className={
+          menuOpen ? "navbar__mobileMenu active" : "navbar__mobileMenu"
+        }
+      >
         {!user ? (
           <>
-            <Typography
-              component={Link}
-              to='/login'
-              variant='body1'
-              className='navbar__rightLink'
-            >
-              Login
-            </Typography>
-            <Button
-              component={Link}
-              to='/register'
-              variant='contained'
-              color='primary'
-              className='navbar__rightButton'
-            >
-              Become a member
-            </Button>
+            <NavbarItem
+              Icon={Person}
+              title='Login'
+              link='/login'
+              closeMenu={closeMenu}
+            />
+            <NavbarItem
+              Icon={LockOpen}
+              title='Register'
+              link='/register'
+              closeMenu={closeMenu}
+            />
           </>
         ) : (
           <>
-            <Avatar
-              ref={anchorRef}
-              aria-controls={open ? "menu-list-grow" : undefined}
-              aria-haspopup='true'
-              onClick={handleToggle}
+            <NavbarItem
+              Icon={Dashboard}
+              title='Dashboard'
+              link='/'
+              closeMenu={closeMenu}
             />
-            <Popper
-              open={open}
-              anchorEl={anchorRef.current}
-              role={undefined}
-              transition
-              disablePortal
-            >
-              {({ TransitionProps, placement }) => (
-                <Grow
-                  {...TransitionProps}
-                  style={{
-                    transformOrigin:
-                      placement === "bottom" ? "center top" : "center bottom",
-                  }}
-                >
-                  <Paper>
-                    <ClickAwayListener onClickAway={handleClose}>
-                      <MenuList
-                        autoFocusItem={open}
-                        id='menu-list-grow'
-                        onKeyDown={handleListKeyDown}
-                      >
-                        <MenuItem onClick={logoutOfApp}>Log out</MenuItem>
-                      </MenuList>
-                    </ClickAwayListener>
-                  </Paper>
-                </Grow>
-              )}
-            </Popper>
+            <NavbarItem
+              Icon={CastForEducation}
+              title='Education'
+              link='/education'
+              closeMenu={closeMenu}
+            />
+            <NavbarItem
+              Icon={AccountBalance}
+              title='Investments'
+              link='/investments'
+              closeMenu={closeMenu}
+            />
+            <NavbarItem
+              Icon={Person}
+              title='Profile'
+              link='/profile'
+              closeMenu={closeMenu}
+            />
           </>
         )}
       </div>

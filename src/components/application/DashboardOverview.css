@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 80%;
   margin: 30px auto;
+  flex-wrap: wrap;
 }
 
 .dashboardOverview__buttons {
@@ -29,4 +30,15 @@
   margin: 5px auto;
   justify-content: space-between;
   align-items: center;
+}
+
+@media only screen and (max-width: 700px) {
+  .dashboardOverview__overview {
+    flex-direction: column;
+  }
+
+  .dashboardOverview__income,
+  .dashboardOverview__expense {
+    flex: 1;
+  }
 }

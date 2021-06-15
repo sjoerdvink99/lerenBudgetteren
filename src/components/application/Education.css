@@ -24,3 +24,13 @@
   padding: 20px;
   height: 40vh;
 }
+
+@media only screen and (max-width: 700px) {
+  .education__container {
+    flex-direction: column;
+  }
+  .education__post {
+    flex: 1;
+    width: 100%;
+  }
+}

@@ -45,7 +45,7 @@ export default function Investments() {
       <div className='investments__other'>
         <div className='investments__left'>
           <Typography variant='h5'>Portfolio diversity</Typography>
-          <Doughnut
+          {/* <Doughnut
             data={{
               labels: ["APPL", "IBM"],
               datasets: [
@@ -56,7 +56,7 @@ export default function Investments() {
               ],
             }}
             options={options}
-          />
+          /> */}
         </div>
         <div className='investments__right'>
           <SearchStock />

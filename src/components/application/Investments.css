@@ -26,3 +26,16 @@
   align-items: center;
   margin-top: 10px;
 }
+
+@media only screen and (max-width: 700px) {
+  .investments__other {
+    flex-direction: column;
+  }
+
+  .investments__left,
+  .investments__right {
+    flex: 1;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

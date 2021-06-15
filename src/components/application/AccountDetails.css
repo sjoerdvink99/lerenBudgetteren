@@ -44,3 +44,18 @@
   height: 250px;
   width: 250px;
 }
+
+@media only screen and (max-width: 700px) {
+  .accountDetails__containerMain {
+    flex-direction: column;
+  }
+
+  .accountDetails__container {
+    flex: 1;
+  }
+
+  .accountDetails__containerLeft {
+    margin: 5px auto;
+    width: 80%;
+  }
+}

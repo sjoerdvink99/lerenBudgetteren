@@ -1,19 +1,17 @@
 .product {
   background-color: whitesmoke;
-  height: 30vh;
   text-align: center;
   padding: 50px 0px;
 }
 
 .product__container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 90%;
   margin: 20px auto;
 }
 
-.product__left,
-.product__right {
-  flex: 0.5;
+@media only screen and (max-width: 700px) {
 }

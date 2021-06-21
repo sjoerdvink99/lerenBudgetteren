@@ -21,3 +21,20 @@
 .header__leftButtonsLeft {
   color: white !important;
 }
+
+@media only screen and (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header__right,
+  .header__left {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .header__right img {
+    width: 400px;
+  }
+}

@@ -8,7 +8,6 @@ import "./Investments.css";
 import SearchStock from "./SearchStock";
 
 const options = {
-  type: "doughnut",
   elements: {
     point: {
       radius: 0,
@@ -45,18 +44,24 @@ export default function Investments() {
       <div className='investments__other'>
         <div className='investments__left'>
           <Typography variant='h5'>Portfolio diversity</Typography>
-          {/* <Doughnut
+          <Doughnut
             data={{
-              labels: ["APPL", "IBM"],
+              labels: ["AAPL", "IBM"],
               datasets: [
                 {
-                  label: "# of Votes",
-                  data: [3, 4],
+                  label: "# of stocks",
+                  data: [3, 3],
+                  backgroundColor: [
+                    "rgb(255, 99, 132)",
+                    "rgb(54, 162, 235)",
+                    "rgb(255, 205, 86)",
+                  ],
+                  hoverOffset: 4,
                 },
               ],
             }}
             options={options}
-          /> */}
+          />
         </div>
         <div className='investments__right'>
           <SearchStock />

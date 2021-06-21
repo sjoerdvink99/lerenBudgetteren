@@ -37,3 +37,12 @@
 .MuiTableHead-root {
   background-color: #23a6f0;
 }
+
+.billing__right {
+  display: flex;
+  flex-direction: column;
+}
+
+.billing__right img {
+  width: 300px;
+}

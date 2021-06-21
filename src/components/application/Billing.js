@@ -10,6 +10,7 @@ import {
   Button,
 } from "@material-ui/core";
 import ProfileSidebar from "./ProfileSidebar";
+import paymentMethod from "../../assets/payment-methods.jpeg";
 import "./Billing.css";
 
 export default function Billing() {
@@ -52,6 +53,7 @@ export default function Billing() {
           </div>
           <div className='billing__right'>
             <Typography variant='h6'>Payment method</Typography>
+            <img src={paymentMethod} alt='methods for payment' />
             <Button variant='contained' color='primary'>
               Update method
             </Button>

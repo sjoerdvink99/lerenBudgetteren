@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { CSVLink } from "react-csv";
 import { Typography, Button } from "@material-ui/core";
 import IncomeExpenseRow from "./IncomeExpenseRow";
 import AddIncomeExpense from "./AddIncomeExpense";
@@ -23,9 +22,9 @@ export default function DashboardOverview({ income, expenses }) {
       </div>
       <div className='dashboardOverview__overview'>
         <div className='dashboardOverview__income'>
-          {income.map(({ id, title, timestamp, amount }) => (
+          {income.map(({ title, timestamp, amount }, index) => (
             <IncomeExpenseRow
-              key={id}
+              key={index}
               title={title}
               timestamp={timestamp}
               amount={amount}
@@ -33,9 +32,9 @@ export default function DashboardOverview({ income, expenses }) {
           ))}
         </div>
         <div className='dashboardOverview__expense'>
-          {expenses.map(({ id, title, timestamp, amount }) => (
+          {expenses.map(({ title, timestamp, amount }, index) => (
             <IncomeExpenseRow
-              key={id}
+              key={index}
               title={title}
               timestamp={timestamp}
               amount={amount}

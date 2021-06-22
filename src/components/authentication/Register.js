@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { useStateValue } from "../../StateProvider";
-import { actionTypes } from "../../reducer";
 import { Link, useHistory } from "react-router-dom";
 import { TextField, FormLabel, Button } from "@material-ui/core";
 import { auth, storage, db } from "../../firebase";
@@ -13,7 +11,6 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
-  const [dispatch] = useStateValue();
   const history = useHistory();
 
   const handleChange = (e) => {
@@ -44,17 +41,6 @@ export default function Register() {
                     displayName: name,
                     telefoon: phone,
                     email: email,
-                  });
-                })
-                .then(() => {
-                  dispatch({
-                    type: actionTypes.SET_USER,
-                    user: {
-                      displayName: result.user.displayName,
-                      uid: result.user.uid,
-                      email: result.user.email,
-                      photoURL: url,
-                    },
                   });
                 });
             })

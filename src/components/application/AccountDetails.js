@@ -87,7 +87,7 @@ export default function AccountDetails() {
             </Button>
           </div>
           <div className='accountDetails__containerRight'>
-            <Avatar src={user.photoUrl} alt={user.displayName} />
+            <Avatar src={user.photoURL} alt={user.displayName} />
           </div>
         </div>
       </div>

@@ -122,6 +122,7 @@ export default function Navbar() {
               <Avatar
                 ref={anchorRef}
                 aria-controls={open ? "menu-list-grow" : undefined}
+                src={user.photoURL}
                 aria-haspopup='true'
                 onClick={handleToggle}
               />

@@ -87,7 +87,12 @@ export default function Register() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button variant='contained' color='primary' onClick={registerUser}>
+        <Button
+          variant='contained'
+          color='primary'
+          disabled={!name || !phone || !email || !profilePic}
+          onClick={registerUser}
+        >
           Register
         </Button>
         <p>

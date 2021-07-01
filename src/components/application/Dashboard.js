@@ -14,6 +14,7 @@ export default function Dashboard() {
   useEffect(() => {
     db.collection(`users/${user.uid}/income`)
       .limit(3)
+      .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) =>
         setIncome(
           snapshot.docs.map((doc) => ({
@@ -29,6 +30,7 @@ export default function Dashboard() {
   useEffect(() => {
     db.collection(`users/${user.uid}/expenses`)
       .limit(3)
+      .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) =>
         setExpenses(
           snapshot.docs.map((doc) => ({

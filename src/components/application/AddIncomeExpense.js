@@ -17,6 +17,7 @@ import {
   Select,
 } from "@material-ui/core";
 import { db } from "../../firebase";
+import firebase from "firebase";
 import { useStateValue } from "../../StateProvider";
 
 export default function AddIncomeExpense({ open, setOpen }) {
@@ -37,8 +38,8 @@ export default function AddIncomeExpense({ open, setOpen }) {
     db.collection(`users/${user.uid}/${type}`).add({
       title: title,
       category: category,
-      amount: amount,
-      date: date,
+      amount: Number(amount),
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
 
     setOpen(false);
@@ -75,12 +76,12 @@ export default function AddIncomeExpense({ open, setOpen }) {
             name='Type'
           >
             <FormControlLabel
-              value='Income'
+              value='income'
               control={<Radio color='primary' />}
               label='Income'
             />
             <FormControlLabel
-              value='Expense'
+              value='expenses'
               control={<Radio color='primary' />}
               label='Expense'
             />
